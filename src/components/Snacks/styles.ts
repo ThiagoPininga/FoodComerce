@@ -33,7 +33,8 @@ export const Container = styled.div`
     }
 
     p {
-      font-size: 0.875rem;
+      font-size: 1rem;
+      text-align: center;
     }
 
     div {

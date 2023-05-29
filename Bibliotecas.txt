@@ -1,0 +1,5 @@
+json-server
+polished
+axios
+react-icon
+styled
