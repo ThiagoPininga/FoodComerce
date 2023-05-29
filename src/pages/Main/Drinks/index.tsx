@@ -1,11 +1,11 @@
 import { Head } from "../../../components/Head";
 import { SnackTitle } from "../../../components/SnackTitle";
 
-export default function Pizzas() {
+export default function Drinks() {
   return (
     <>
-      <Head title="Pizzas"></Head>
-      <SnackTitle>Pizzas</SnackTitle>
+      <Head title="Bebidas"></Head>
+      <SnackTitle>Bebidas</SnackTitle>
     </>
   )
 }
