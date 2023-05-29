@@ -4,7 +4,7 @@ import MainPage from './pages/Main'
 import BurgersPage from './pages/Main/Burgers'
 import PizzasPage from './pages/Main/Pizzas'
 import DrinksPage from './pages/Main/Drinks'
-import IceCreamPage from './pages/Main/IceCream'
+import IceCreamPage from './pages/Main/IceCreams'
 
 export function AppRoutes() {
   return (
