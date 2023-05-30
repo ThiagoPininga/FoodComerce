@@ -60,6 +60,8 @@ export const Container = styled.div`
         align-items: center;
         justify-content: center;
 
+        transition: background .3s;
+
         svg {
           stroke: ${({ theme }) => theme.colors.white};
           width: 1.5rem;
