@@ -33,8 +33,7 @@ export const Container = styled.div`
     }
 
     p {
-      font-size: 1rem;
-      text-align: center;
+      font-size: 0.875rem;
     }
 
     div {
@@ -59,8 +58,6 @@ export const Container = styled.div`
         display: flex;
         align-items: center;
         justify-content: center;
-
-        transition: background .3s;
 
         svg {
           stroke: ${({ theme }) => theme.colors.white};

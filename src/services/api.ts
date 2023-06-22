@@ -1,4 +1,5 @@
 import axios from 'axios'
+
 import { SnackData } from '../interfaces/SnackData'
 
 const api = axios.create({

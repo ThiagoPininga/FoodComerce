@@ -1,6 +1,6 @@
-export function CurrencyFormat (currency: number) {
+export function currencyFormat(currency: number) {
   return new Intl.NumberFormat('pt-BR', {
-    style:'currency',
-    currency: 'BRL'
+    style: 'currency',
+    currency: 'BRL',
   }).format(currency)
 }
