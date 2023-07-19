@@ -1,11 +1,11 @@
-import { useCart } from "../../../hooks/useCart";
+import { useCart } from '../../../hooks/useCart'
 
-import { TableDesktop } from "./tableDesktop";
+import { TableDesktop } from './tableDesktop'
 
-export function Table(){
-  const {cart} = useCart()
+export function Table() {
+  const { cart } = useCart()
 
-  if(cart.length === 0) return <h1>Ops! parece que você não adicionou nenhum item a seu carrinho ainda</h1>
+  if (cart.length === 0) return <h1>Ops! Parece que você não tem pedidos, peça já!</h1>
 
-  return <TableDesktop/>
+  return <TableDesktop />
 }

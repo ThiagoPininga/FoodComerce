@@ -1,6 +1,6 @@
 import { FiPlus } from 'react-icons/fi'
 
-import { currencyFormat } from '../../Helpers/currencyFormat'
+import { currencyFormat } from '../../helpers/currencyFormat'
 import { useCart } from '../../hooks/useCart'
 import { SnackData } from '../../interfaces/SnackData'
 

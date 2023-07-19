@@ -1,15 +1,17 @@
-import { currencyFormat } from "../../../../Helpers/currencyFormat";
+import { FaTrashAlt } from 'react-icons/fa'
+import { useCart } from '../../../../hooks/useCart'
+import { ConfirmOrder } from '../../../../components/ConfirmOrder'
 
-import { useCart } from "../../../../hooks/useCart"
+import { currencyFormat } from '../../../../helpers/currencyFormat'
 
-import PlusImg  from "../../../../assets/circle-plus.svg"
-import MinusImg from "../../../../assets/circle-minus.svg"
+import minusImg from '../../../../assets/circle-minus.svg'
+import plusImg from '../../../../assets/circle-plus.svg'
+
+import { Container } from './styles'
 
 
-import { Container } from "./styles"
-
-export function TableDesktop(){
-  const {cart} = useCart();
+export function TableDesktop() {
+  const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement} = useCart()
 
   return (
     <Container>
@@ -24,44 +26,39 @@ export function TableDesktop(){
           </tr>
         </thead>
         <tbody>
-          {
-            cart.map((item) => (
-              <tr key={`${item.snack}-${item.id}`}>
-                <td>
-                  <img src={item.image} alt={item.name}/>
-                </td>
-
-                <td>
-                  <h4>{item.name}</h4>
-                  <span>{currencyFormat(item.price)}</span>
-                </td>
-
-                <td>
-                  <div>
-                    <button type="button" onClick={() => console.log(`Decrementar snack`, item)}>
-                      <img src={MinusImg} alt="Remover qtd" />
-                    </button>
-                    <span>
-                      {`${item.quantity}`.padStart(2, '0')}
-                    </span>
-                    <button type="button" onClick={() => console.log(`Aumentar snack`, item)}>
-                      <img src={PlusImg} alt="Adicionar qtd" />
-                    </button>
-                  </div>
-                </td>
-
-                <td>
-                  <h5>{currencyFormat(item.subtotal)}</h5>
-                </td>
-
-                <td>
-                  Deletar
-                </td>
-              </tr>
-            ))
-          }
+          {cart.map((item) => (
+            <tr key={`${item.snack}-${item.id}`}>
+              <td>
+                <img src={item.image} alt={item.name} />
+              </td>
+              <td>
+                <h4>{item.name}</h4>
+                <span>{currencyFormat(item.price)}</span>
+              </td>
+              <td>
+                <div>
+                  <button type='button' onClick={() => snackCartDecrement(item)}>
+                    <img src={minusImg} alt='Remover quantidade' />
+                  </button>
+                  <span>{`${item.quantity}`.padStart(2, '0')}</span>
+                  <button type='button' onClick={() => snackCartIncrement(item)}>
+                    <img src={plusImg} alt='Adicionar quantidade' />
+                  </button>
+                </div>
+              </td>
+              <td>
+                <h5>{currencyFormat(item.subtotal)}</h5>
+              </td>
+              <td>
+                <button type='button' onClick={() => removeSnackFromCart(item)}>
+                  <FaTrashAlt/>
+                </button>
+              </td>
+            </tr>
+          ))}
         </tbody>
       </table>
+      <ConfirmOrder></ConfirmOrder>
     </Container>
-   )
+  )
 }
