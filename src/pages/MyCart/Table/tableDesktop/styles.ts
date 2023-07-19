@@ -90,7 +90,7 @@ export const Container = styled.main`
         width: 1.5rem;
         padding-right: 0;
 
-        button{
+        button {
           background: none;
           border: none;
           width: 100%;
@@ -99,8 +99,8 @@ export const Container = styled.main`
           align-items: center;
           justify-content: flex-end;
 
-          svg{
-            fill: ${({theme}) => theme.colors.yellow};
+          svg {
+            fill: ${({ theme }) => theme.colors.yellow};
             width: 1.5rem;
             height: 1.5rem;
           }

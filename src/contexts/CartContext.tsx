@@ -67,18 +67,21 @@ export function CartProvider({ children }: CartProviderProps) {
   function updateSnackQuantity(snack: Snack, newQuantity: number) {
     if (newQuantity <= 0) return
 
-    const snackExistentInCart = cart.find((item) => item.id === snack.id && item.snack === snack.snack)
+    const snackExistentInCart = cart.find(
+      (item) => item.id === snack.id && item.snack === snack.snack,
+    )
 
-    if(!snackExistentInCart) return
+    if (!snackExistentInCart) return
 
     const newCart = cart.map((item) => {
-      if(item.id === snackExistentInCart.id && item.snack === snackExistentInCart.snack){
-        return{
+      if (item.id === snackExistentInCart.id && item.snack === snackExistentInCart.snack) {
+        return {
           ...item,
           quantity: newQuantity,
-          subtotal: item.price * newQuantity
+          subtotal: item.price * newQuantity,
         }
       }
+
       return item
     })
 
@@ -93,7 +96,9 @@ export function CartProvider({ children }: CartProviderProps) {
     updateSnackQuantity(snack, snack.quantity - 1)
   }
 
-  function confirmOrder() {return}
+  function confirmOrder() {
+    return
+  }
 
   return (
     <CartContext.Provider

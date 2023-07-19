@@ -1,6 +1,6 @@
 import { useCart } from '../../../hooks/useCart'
 
-import { TableDesktop } from './tableDesktop'
+import { TableDesktop } from './TableDesktop'
 
 export function Table() {
   const { cart } = useCart()
