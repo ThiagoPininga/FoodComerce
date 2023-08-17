@@ -11,7 +11,7 @@ import plusImg from '../../../../assets/circle-plus.svg'
 import { Container } from './styles'
 
 export function TableDesktop() {
-  const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement} = useCart()
+  const { cart, removeSnackFromCart, snackCartIncrement, snackCartDecrement } = useCart()
 
   return (
     <Container>
@@ -51,14 +51,14 @@ export function TableDesktop() {
               </td>
               <td>
                 <button type='button' onClick={() => removeSnackFromCart(item)}>
-                  <FaTrashAlt/>
+                  <FaTrashAlt />
                 </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-      <ConfirmOrder/>
+      <ConfirmOrder />
     </Container>
   )
 }
